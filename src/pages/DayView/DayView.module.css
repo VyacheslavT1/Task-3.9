@@ -1,0 +1,134 @@
+.dayContainer {
+  display: flex;
+  height: 100vh;
+  background-color: var(--background-color-light);
+}
+.dayContainer .wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 90vh;
+  margin: var(--margin-custom);
+  border-radius: var(--border-radius);
+  box-shadow: 0px 1px 2px 2px var(--color-grey-10);
+  background-color: var(--color-light);
+}
+.dayContainer .headerContainer {
+  box-shadow: 0px 1px 2px 2px var(--color-grey-10);
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+.dayContainer .headerContainer .headerRow,
+.dayContainer .headerContainer .allDayEvents {
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+.dayContainer .headerContainer .headerRow .empty,
+.dayContainer .headerContainer .allDayEvents .empty {
+  flex: 0 0 4.375rem;
+  position: sticky;
+  left: 0;
+  z-index: 4;
+}
+.dayContainer .headerContainer .headerRow .dayLabel,
+.dayContainer .headerContainer .headerRow .allDayCell,
+.dayContainer .headerContainer .allDayEvents .dayLabel,
+.dayContainer .headerContainer .allDayEvents .allDayCell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px solid var(--color-grey-10);
+  color: var(--color-dark);
+}
+.dayContainer .headerContainer .headerRow .dayLabel > span:first-of-type,
+.dayContainer .headerContainer .headerRow .allDayCell > span:first-of-type,
+.dayContainer .headerContainer .allDayEvents .dayLabel > span:first-of-type,
+.dayContainer .headerContainer .allDayEvents .allDayCell > span:first-of-type {
+  font-weight: var(--font-weight-bold);
+}
+.dayContainer .headerContainer .headerRow .dayLabel > span:last-of-type,
+.dayContainer .headerContainer .headerRow .allDayCell > span:last-of-type,
+.dayContainer .headerContainer .allDayEvents .dayLabel > span:last-of-type,
+.dayContainer .headerContainer .allDayEvents .allDayCell > span:last-of-type {
+  font-size: var(--font-size-xsmall);
+}
+.dayContainer .headerContainer .headerRow .dayLabel.today,
+.dayContainer .headerContainer .headerRow .allDayCell.today,
+.dayContainer .headerContainer .allDayEvents .dayLabel.today,
+.dayContainer .headerContainer .allDayEvents .allDayCell.today {
+  color: var(--color-dark-constant);
+}
+.dayContainer .headerContainer .headerRow .dayLabel.today::before,
+.dayContainer .headerContainer .headerRow .allDayCell.today::before,
+.dayContainer .headerContainer .allDayEvents .dayLabel.today::before,
+.dayContainer .headerContainer .allDayEvents .allDayCell.today::before {
+  content: "";
+  position: absolute;
+  inset: var(--padding-xsmall);
+  background-color: var(--color-pale-green);
+  border-radius: var(--border-radius);
+  z-index: -1;
+}
+.dayContainer .headerContainer .headerRow .dayLabel,
+.dayContainer .headerContainer .allDayEvents .dayLabel {
+  width: 7.5rem;
+  align-items: center;
+}
+.dayContainer .headerContainer .headerRow {
+  min-height: 3.75rem;
+}
+.dayContainer .headerContainer .allDayEvents .allDayCell {
+  flex: 1;
+}
+.dayContainer .gridWrapper {
+  flex: 1;
+  overflow-y: auto;
+  position: relative;
+}
+.dayContainer .gridWrapper .hourRow {
+  display: flex;
+  height: 5rem;
+}
+.dayContainer .gridWrapper .hourRow:first-of-type .timeCell .timeLabel {
+  visibility: hidden;
+}
+.dayContainer .gridWrapper .hourRow .timeCell {
+  position: relative;
+  flex: 0 0 4.375rem;
+}
+.dayContainer .gridWrapper .hourRow .timeCell .timeLabel {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-dark);
+  white-space: nowrap;
+}
+.dayContainer .gridWrapper .hourRow .dayCell {
+  flex: 1;
+  border-left: 1px solid var(--color-grey-10);
+  border-bottom: 1px solid var(--color-grey-10);
+}
+.dayContainer .gridWrapper .hourRow .dayCell:hover {
+  background-color: var(--color-grey-30);
+  cursor: pointer;
+}
+.dayContainer .gridWrapper .eventsLayer {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 4.375rem;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+.dayContainer .gridWrapper .eventsLayer .dayColumn {
+  position: relative;
+  flex: 1 0 0;
+  pointer-events: auto;
+}/*# sourceMappingURL=DayView.module.css.map */

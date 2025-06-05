@@ -1,0 +1,138 @@
+.dayContainer {
+  display: flex;
+  height: 100vh;
+  background-color: var(--background-color-light);
+
+  .wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 90vh;
+    margin: var(--margin-custom);
+    border-radius: var(--border-radius);
+    box-shadow: 0px 1px 2px 2px var(--color-grey-10);
+    background-color: var(--color-light);
+  }
+  .headerContainer {
+    box-shadow: 0px 1px 2px 2px var(--color-grey-10);
+    border-radius: 0.5rem 0.5rem 0 0;
+
+    .headerRow,
+    .allDayEvents {
+      display: flex;
+      position: sticky;
+      top: 0;
+      z-index: 3;
+      border-radius: 0.5rem 0.5rem 0 0;
+
+      .empty {
+        flex: 0 0 4.375rem;
+        position: sticky;
+        left: 0;
+        z-index: 4;
+      }
+      .dayLabel,
+      .allDayCell {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-left: 1px solid var(--color-grey-10);
+        color: var(--color-dark);
+
+        & > span:first-of-type {
+          font-weight: var(--font-weight-bold);
+        }
+        & > span:last-of-type {
+          font-size: var(--font-size-xsmall);
+        }
+
+        &.today {
+          color: var(--color-dark-constant);
+          &::before {
+            content: "";
+            position: absolute;
+            inset: var(--padding-xsmall);
+            background-color: var(--color-pale-green);
+            border-radius: var(--border-radius);
+            z-index: -1;
+          }
+        }
+      }
+      .dayLabel {
+        width: 7.5rem;
+        align-items: center;
+      }
+    }
+
+    .headerRow {
+      min-height: 3.75rem;
+    }
+
+    .allDayEvents {
+      .allDayCell {
+        flex: 1;
+      }
+    }
+  }
+
+  .gridWrapper {
+    flex: 1;
+    overflow-y: auto;
+    position: relative;
+
+    .hourRow {
+      display: flex;
+      height: 5rem;
+      &:first-of-type {
+        .timeCell {
+          .timeLabel {
+            visibility: hidden;
+          }
+        }
+      }
+
+      .timeCell {
+        position: relative;
+        flex: 0 0 4.375rem;
+
+        & .timeLabel {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: var(--color-dark);
+          white-space: nowrap;
+        }
+      }
+
+      .dayCell {
+        flex: 1;
+        border-left: 1px solid var(--color-grey-10);
+        border-bottom: 1px solid var(--color-grey-10);
+        &:hover {
+          background-color: var(--color-grey-30);
+          cursor: pointer;
+        }
+      }
+    }
+
+    .eventsLayer {
+      display: flex;
+      position: absolute;
+      top: 0;
+      left: 4.375rem;
+      right: 0;
+      bottom: 0;
+      z-index: 5;
+      pointer-events: none;
+
+      .dayColumn {
+        position: relative;
+        flex: 1 0 0;
+        pointer-events: auto;
+      }
+    }
+  }
+}

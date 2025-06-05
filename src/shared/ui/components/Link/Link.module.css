@@ -1,0 +1,21 @@
+.link {
+  cursor: pointer;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-green-main);
+}
+.link.disabled {
+  cursor: not-allowed;
+  color: var(--color-grey-90);
+}
+.link.disabled:hover {
+  text-decoration: none;
+}
+.link.disabled:active {
+  color: var(--color-grey-90);
+}
+.link:hover {
+  text-decoration: underline;
+}
+.link:active {
+  color: var(--color-green-active);
+}/*# sourceMappingURL=Link.module.css.map */

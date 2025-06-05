@@ -1,0 +1,22 @@
+.label {
+  color: var(--color-dark);
+  font-size: var(--font-size-xsmall);
+}
+
+.palette {
+  display: flex;
+  flex-wrap: wrap;
+  width: 14.625rem;
+  margin: var(--margin-vertical-small);
+  padding: var(--padding-xsmall);
+  gap: var(--gap-medium);
+  border: 1px solid var(--color-grey-10);
+  border-radius: var(--border-radius);
+  .icon {
+    cursor: pointer;
+  }
+  .disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+  }
+}

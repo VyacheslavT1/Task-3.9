@@ -1,0 +1,17 @@
+.title,
+.colorPicker {
+  display: flex;
+  gap: var(--gap-small);
+  margin-bottom: var(--margin-medium);
+}
+
+.titleIcon,
+.paletteIcon {
+  position: relative;
+  top: 1.5rem;
+}
+
+.submitButton {
+  display: flex;
+  justify-content: end;
+}/*# sourceMappingURL=CalendarForm.module.css.map */

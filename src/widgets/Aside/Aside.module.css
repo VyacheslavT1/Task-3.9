@@ -1,0 +1,58 @@
+.aside {
+  position: relative;
+  margin-top: var(--margin-large);
+  margin-left: var(--margin-xlarge);
+}
+.aside button {
+  width: 100%;
+  margin-bottom: var(--margin-small);
+}
+.aside .myCalendars {
+  margin-top: var(--margin-small);
+  padding: var(--padding-xsmall);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  border-radius: var(--border-radius);
+}
+.aside .myCalendars .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--padding-vertical-xsmall);
+  cursor: pointer;
+}
+.aside .myCalendars .title svg {
+  color: var(--color-dark);
+}
+.aside .myCalendars .title svg:hover {
+  color: var(--color-green-main);
+}
+.aside .myCalendars .calendarsList .calendarItem {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding-vertical-small);
+  border-radius: var(--border-radius);
+}
+.aside .myCalendars .calendarsList .calendarItem:hover {
+  background-color: var(--color-grey-30);
+}
+.aside .myCalendars .calendarsList .calendarItem .iconContainer .editIcon,
+.aside .myCalendars .calendarsList .calendarItem .iconContainer .trashIcon {
+  cursor: pointer;
+}
+.aside .myCalendars .calendarsList .calendarItem .iconContainer .editIcon:hover,
+.aside .myCalendars .calendarsList .calendarItem .iconContainer .trashIcon:hover {
+  color: var(--color-error);
+}
+.aside .myCalendars .calendarsList .calendarItem .iconContainer .editIcon.disabled,
+.aside .myCalendars .calendarsList .calendarItem .iconContainer .trashIcon.disabled {
+  color: var(--color-grey-80);
+  cursor: not-allowed;
+}
+.aside .myCalendars .calendarsList .calendarItem .iconContainer .editIcon {
+  padding-right: var(--padding-xsmall);
+}
+.aside .myCalendars .calendarsList .calendarItem .iconContainer .editIcon:hover {
+  color: var(--color-green-main);
+}/*# sourceMappingURL=Aside.module.css.map */

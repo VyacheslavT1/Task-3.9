@@ -1,0 +1,65 @@
+.aside {
+  position: relative;
+  margin-top: var(--margin-large);
+  margin-left: var(--margin-xlarge);
+
+  button {
+    width: 100%;
+    margin-bottom: var(--margin-small);
+  }
+
+  .myCalendars {
+    margin-top: var(--margin-small);
+    padding: var(--padding-xsmall);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    border-radius: var(--border-radius);
+
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--padding-vertical-xsmall);
+      cursor: pointer;
+      svg {
+        color: var(--color-dark);
+        &:hover {
+          color: var(--color-green-main);
+        }
+      }
+    }
+    .calendarsList {
+      .calendarItem {
+        display: flex;
+        justify-content: space-between;
+
+        padding: var(--padding-vertical-small);
+
+        border-radius: var(--border-radius);
+        &:hover {
+          background-color: var(--color-grey-30);
+        }
+        .iconContainer {
+          .editIcon,
+          .trashIcon {
+            cursor: pointer;
+            &:hover {
+              color: var(--color-error);
+            }
+            &.disabled {
+              color: var(--color-grey-80);
+              cursor: not-allowed;
+            }
+          }
+          .editIcon {
+            padding-right: var(--padding-xsmall);
+            &:hover {
+              color: var(--color-green-main);
+            }
+          }
+        }
+      }
+    }
+  }
+}

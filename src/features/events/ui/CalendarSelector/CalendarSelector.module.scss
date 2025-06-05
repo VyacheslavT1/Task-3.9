@@ -1,0 +1,12 @@
+.row {
+  display: flex;
+  margin-bottom: var(--margin-small);
+  align-items: flex-end;
+  gap: var(--gap-small);
+  .icon {
+    margin-bottom: var(--margin-small);
+  }
+}
+.calendar {
+  width: 100%;
+}

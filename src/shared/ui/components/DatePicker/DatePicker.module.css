@@ -1,0 +1,149 @@
+:root {
+  --color-green-main: #00ae1c;
+  --color-green-hover: #5ce171;
+  --color-green-active: #0cd52b;
+  --color-pale-green: #dff5e2;
+  --color-green-avatar: #80d78d;
+  --color-light-constant: #fff;
+  --color-dark-constant: #323749;
+  --color-error: #f73333;
+  --color-grey-70: #505050;
+  --color-grey-80: #707070;
+  --color-grey-100: #5c5f6e;
+  --border-radius: 0.5rem;
+  --border-radius-small: 0.25rem;
+  --padding-large: 2rem;
+  --padding-small: 1rem;
+  --padding-xsmall: 0.5rem;
+  --padding-vertical: 1rem 0;
+  --padding-vertical-small: 0.75rem 0;
+  --padding-vertical-xsmall: 0.5rem 0;
+  --padding-custom-small: 1rem 0.5rem;
+  --margin-vertical: 1rem 0;
+  --margin-vertical-small: 0.5rem 0;
+  --margin-small: 1rem;
+  --margin-medium: 1.5rem;
+  --margin-large: 2rem;
+  --margin-xlarge: 4rem;
+  --margin-custom: 2rem 4rem;
+  --gap-large: 2.5rem;
+  --gap-medium: 1.5rem;
+  --gap-small: 1rem;
+  --gap-xsmall: 0.5rem;
+  --font-size-small: 0.75rem;
+  --font-size-xsmall: 0.6rem;
+  --font-weight-bold: 700;
+  --line-height-medium: 1.2rem;
+}
+
+[data-theme=light] {
+  --color-light: #fff;
+  --color-dark: #323749;
+  --background-color-light: #f2f5f7;
+  --background-color-dark: #333;
+  --color-grey-10: #dedfe5;
+  --color-grey-20: #e0e0e0;
+  --color-grey-30: #efefef;
+  --color-grey-40: #f6f6f6;
+  --color-grey-50: #e3e3e3;
+  --color-grey-60: #c8c8c8;
+  --color-grey-70: #8d8e91;
+  --color-grey-80: #737373;
+  --color-grey-90: #575d58;
+}
+
+[data-theme=dark] {
+  --color-light: #323749;
+  --color-dark: #fff;
+  --background-color-light: #1e212c;
+  --background-color-dark: #f2f5f7;
+  --color-grey-10: #575d58;
+  --color-grey-20: #464b5e;
+  --color-grey-30: #5a5f73;
+  --color-grey-40: #3e4354;
+  --color-grey-50: #292d3a;
+  --color-grey-60: #4a4f63;
+  --color-grey-90: #a1a5a2;
+}
+
+* {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.datePicker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 15rem;
+  padding: var(--padding-custom-small);
+  border-radius: var(--border-radius);
+  background: var(--color-light);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: var(--margin-medium);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark);
+}
+.header .controls {
+  display: inline-flex;
+  gap: var(--gap-xsmall);
+}
+.header .controls button {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--color-dark);
+  cursor: pointer;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  width: 100%;
+  gap: var(--gap-xsmall);
+}
+
+.dayLabel {
+  text-align: center;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark);
+}
+
+.day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-small);
+  color: var(--color-dark);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.day:hover:not(.disabled, .selected) {
+  background: var(--color-grey-10);
+}
+.day.disabled {
+  color: var(--color-grey-20);
+  cursor: default;
+}
+
+.selected {
+  background: var(--color-green-main);
+  color: var(--color-light);
+}
+.selected:hover {
+  background-color: var(--color-green-hover);
+}/*# sourceMappingURL=DatePicker.module.css.map */

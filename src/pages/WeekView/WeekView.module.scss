@@ -1,0 +1,142 @@
+.weekContainer {
+  display: flex;
+  height: 100vh;
+  background-color: var(--background-color-light);
+
+  .wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 90vh;
+    margin: var(--margin-custom);
+    border-radius: var(--border-radius);
+    box-shadow: 0px 1px 2px 2px var(--color-grey-10);
+    background-color: var(--color-light);
+
+    .headerContainer {
+      border-radius: 0.5rem 0.5rem 0 0;
+      box-shadow: 0px 1px 2px 2px var(--color-grey-10);
+
+      .weekDays,
+      .allDayEvents {
+        display: flex;
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        border-radius: 0.5rem 0.5rem 0 0;
+
+        .empty {
+          position: sticky;
+          flex: 0 0 4.375rem;
+          left: 0;
+          z-index: 4;
+        }
+
+        .dayLabel,
+        .allDayCell {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+          justify-content: center;
+          border-left: 1px solid var(--color-grey-10);
+          color: var(--color-dark);
+
+          & > span:first-of-type {
+            font-weight: var(--font-weight-bold);
+          }
+          & > span:last-of-type {
+            font-size: var(--font-size-xsmall);
+          }
+
+          &.today {
+            color: var(--color-dark-constant);
+            &::before {
+              content: "";
+              position: absolute;
+              inset: var(--padding-xsmall);
+              border-radius: var(--border-radius);
+              z-index: -1;
+              background-color: var(--color-pale-green);
+            }
+          }
+        }
+
+        .dayLabel {
+          align-items: center;
+          padding: var(--padding-xsmall);
+        }
+        .allDayCell {
+          align-items: flex-start;
+          justify-content: flex-start;
+        }
+      }
+
+      .weekDays {
+        min-height: 3.75rem;
+      }
+    }
+
+    .eventsLayer {
+      display: flex;
+      position: absolute;
+      left: 4.375rem;
+      top: 0;
+      right: 0;
+      z-index: 5;
+
+      .dayColumn {
+        position: relative;
+        flex: 1 0 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+    }
+
+    .gridWrapper {
+      position: relative;
+      flex: 1;
+      overflow-y: auto;
+
+      .weekGrid {
+        display: grid;
+        grid-template-columns: 4.375rem repeat(7, 1fr);
+
+        .dayColumn {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+        }
+
+        .time {
+          position: relative;
+          &:first-of-type {
+            visibility: hidden;
+          }
+
+          .timeLabel {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--color-dark);
+            white-space: nowrap;
+          }
+        }
+
+        .hourCell {
+          height: 5rem;
+          border-left: 1px solid var(--color-grey-10);
+          border-bottom: 1px solid var(--color-grey-10);
+          &:hover {
+            background-color: var(--color-grey-30);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

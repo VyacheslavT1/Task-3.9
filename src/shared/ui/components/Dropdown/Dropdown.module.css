@@ -1,0 +1,70 @@
+.wrapper {
+  position: relative;
+  min-width: 5rem;
+}
+.wrapper .inputBox {
+  display: flex;
+  align-items: center;
+  padding: var(--padding-xsmall);
+  background: var(--color-light);
+  color: var(--color-dark);
+  cursor: pointer;
+}
+.wrapper .inputBox .icon {
+  margin-left: auto;
+  transform: translateY(10%);
+}
+.wrapper .inputBox > svg {
+  margin-right: var(--margin-small);
+}
+.wrapper.primary .inputBox {
+  border: 1px solid var(--color-grey-10);
+  border-radius: var(--border-radius);
+}
+.wrapper.primary .inputBox:hover {
+  background-color: var(--color-grey-30);
+  box-shadow: 0 1px 2px rgba(69, 69, 69, 0.25);
+}
+.wrapper.primary .inputBox.active {
+  background-color: var(--color-grey-20);
+}
+.wrapper.secondary .inputBox {
+  border-bottom: 1px solid var(--color-grey-80);
+  padding: var(--padding-vertical-small);
+}
+.wrapper.secondary .inputBox .icon {
+  padding-inline: var(--padding-xsmall);
+}
+.wrapper.disabled .inputBox {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.wrapper.disabled .inputBox .icon {
+  pointer-events: none;
+}
+.wrapper .menu {
+  position: absolute;
+  width: 100%;
+  margin-top: 3px;
+  z-index: 5;
+  border: 1px solid var(--color-grey-10);
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 16px rgba(49, 49, 49, 0.1);
+  background: var(--color-light);
+  color: var(--color-dark);
+  overflow: hidden;
+}
+.wrapper .menu .option {
+  padding: var(--padding-xsmall);
+  text-align: left;
+  cursor: pointer;
+}
+.wrapper .menu .option svg {
+  margin-right: var(--margin-small);
+}
+.wrapper .menu .option:hover {
+  background-color: var(--color-grey-40);
+}
+.wrapper .menu .option:active {
+  background-color: var(--color-grey-50);
+}/*# sourceMappingURL=Dropdown.module.css.map */

@@ -1,0 +1,33 @@
+/* EventItem.module.css */
+.eventItem {
+  position: absolute;
+  padding-top: 2px;
+  padding-left: var(--padding-xsmall);
+  z-index: 10;
+  border-radius: var(--border-radius-small);
+  color: var(--color-dark);
+  overflow-y: auto;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.timeRange {
+  font-size: var(--font-size-small);
+  letter-spacing: -0.07em;
+  word-spacing: -0.07em;
+}
+
+.singleLine {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-small);
+}/*# sourceMappingURL=EventItem.module.css.map */

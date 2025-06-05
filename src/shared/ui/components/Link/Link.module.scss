@@ -1,0 +1,22 @@
+.link {
+  cursor: pointer;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-green-main);
+
+  &.disabled {
+    cursor: not-allowed;
+    color: var(--color-grey-90);
+    &:hover {
+      text-decoration: none;
+    }
+    &:active {
+      color: var(--color-grey-90);
+    }
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+  &:active {
+    color: var(--color-green-active);
+  }
+}

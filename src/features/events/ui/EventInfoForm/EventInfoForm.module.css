@@ -1,0 +1,39 @@
+.eventInfoForm .iconContainer {
+  position: absolute;
+  top: 2rem;
+  right: 3rem;
+  transform: translateY(-50%);
+}
+.eventInfoForm .iconContainer .editIcon {
+  padding-right: var(--padding-small);
+  cursor: pointer;
+}
+.eventInfoForm .iconContainer .editIcon:hover {
+  color: var(--color-green-main);
+}
+.eventInfoForm .iconContainer .trashIcon {
+  cursor: pointer;
+}
+.eventInfoForm .iconContainer .trashIcon:hover {
+  color: var(--color-error);
+}
+.eventInfoForm .eventInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-small);
+}
+.eventInfoForm .eventInfoContainer .eventTitle,
+.eventInfoForm .eventInfoContainer .eventDate,
+.eventInfoForm .eventInfoContainer .calendar,
+.eventInfoForm .eventInfoContainer .description {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-small);
+}
+.eventInfoForm .eventInfoContainer .eventDate {
+  flex-wrap: wrap;
+}
+.eventInfoForm .eventInfoContainer .allDayAndRepeat {
+  flex-basis: 100%;
+  padding-left: 2rem;
+}/*# sourceMappingURL=EventInfoForm.module.css.map */

@@ -1,0 +1,28 @@
+.row {
+  display: flex;
+  margin-bottom: var(--margin-small);
+  align-items: flex-end;
+  gap: var(--gap-small);
+}
+.row .icon {
+  margin-bottom: var(--margin-small);
+}
+
+.repeat {
+  display: flex;
+  align-items: center;
+}
+.repeat .select {
+  min-width: 12rem;
+  padding-left: var(--padding-small);
+  z-index: 10;
+}
+
+.description {
+  width: 100%;
+}
+
+.submitButton {
+  display: flex;
+  justify-content: end;
+}/*# sourceMappingURL=EventForm.module.css.map */

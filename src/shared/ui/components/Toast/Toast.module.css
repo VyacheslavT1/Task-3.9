@@ -1,0 +1,23 @@
+.toast {
+  position: absolute;
+  left: 50%;
+  bottom: 13px;
+  width: 15rem;
+  padding: var(--padding-small);
+  z-index: 100;
+  border-radius: 0.5rem 0.5rem 0 0;
+  background-color: var(--color-light);
+  box-shadow: 0 1rem 3rem 0 rgba(0, 0, 0, 0.5);
+  transform: translateX(-50%);
+}
+.toast .message {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  color: var(--color-dark);
+}
+.toast .message .closeButton {
+  color: var(--color-dark);
+  cursor: pointer;
+}/*# sourceMappingURL=Toast.module.css.map */

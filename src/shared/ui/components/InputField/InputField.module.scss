@@ -1,0 +1,78 @@
+.inputField {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+
+  .label {
+    font-size: var(--font-size-xsmall);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-dark);
+  }
+
+  &.disabledUsername {
+    .label {
+      color: var(--color-grey-80);
+    }
+
+    input:disabled {
+      border-bottom: 1px solid var(--color-grey-80);
+      color: var(--color-grey-80);
+      cursor: not-allowed;
+    }
+  }
+
+  &.disabledPassword {
+    input:disabled {
+      border-bottom: 1px solid var(--color-grey-80);
+      cursor: not-allowed;
+    }
+
+    .eyeIcon.disabledPassword {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+  }
+
+  .inputContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    input {
+      width: 100%;
+      padding: var(--padding-vertical-small);
+      text-align: left;
+      border: none;
+      outline: none;
+      border-bottom: 1px solid var(--color-grey-80);
+      background-color: inherit;
+      color: var(--color-dark);
+      line-height: var(--line-height-medium);
+
+      &:focus {
+        border-bottom: 1px solid (--color-dark);
+      }
+
+      &::placeholder {
+        color: var(--color-grey-100);
+      }
+      &.error {
+        border-bottom: 1px solid var(--color-error);
+      }
+    }
+
+    .eyeIcon {
+      position: absolute;
+      right: 0;
+      transform: translateY(10%);
+      color: var(--color-dark);
+      cursor: pointer;
+    }
+  }
+
+  .errorMessage {
+    font-size: var(--font-size-xsmall);
+    color: var(--color-error);
+  }
+}

@@ -1,0 +1,43 @@
+.eventInfoForm {
+  .iconContainer {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    transform: translateY(-50%);
+
+    .editIcon {
+      padding-right: var(--padding-small);
+      cursor: pointer;
+      &:hover {
+        color: var(--color-green-main);
+      }
+    }
+    .trashIcon {
+      cursor: pointer;
+      &:hover {
+        color: var(--color-error);
+      }
+    }
+  }
+  .eventInfoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-small);
+
+    .eventTitle,
+    .eventDate,
+    .calendar,
+    .description {
+      display: flex;
+      align-items: center;
+      gap: var(--gap-small);
+    }
+    .eventDate {
+      flex-wrap: wrap;
+    }
+    .allDayAndRepeat {
+      flex-basis: 100%;
+      padding-left: 2rem;
+    }
+  }
+}

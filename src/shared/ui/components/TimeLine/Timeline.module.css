@@ -1,0 +1,22 @@
+.container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.line {
+  position: absolute;
+  height: 1px;
+  background-color: var(--color-error);
+}
+.line::before {
+  content: "";
+  position: absolute;
+  left: 0.1px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: inherit;
+}/*# sourceMappingURL=Timeline.module.css.map */

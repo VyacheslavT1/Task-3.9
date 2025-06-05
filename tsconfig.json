@@ -1,0 +1,25 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "types": ["node", "jest", "@testing-library/jest-dom"],
+    "lib": ["dom", "es2020"],
+    "jsx": "react-jsx",
+    "baseUrl": "src",
+    "paths": {
+      "shared/*": ["shared/*"],
+      "features/*": ["features/*"],
+      "pages/*": ["pages/*"],
+      "icons/*": ["shared/icons/*"],
+      "hooks/*": ["shared/hooks/*"],
+      "widgets/*": ["widgets/*"],
+      "app/*": ["app/*"]
+    }
+  },
+  "include": ["src", "global.d.ts", "src/vite-env.d.ts"]
+}

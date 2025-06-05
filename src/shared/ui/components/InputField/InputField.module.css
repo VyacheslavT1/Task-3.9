@@ -1,0 +1,66 @@
+.inputField {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+}
+.inputField .label {
+  font-size: var(--font-size-xsmall);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark);
+}
+.inputField.disabledUsername .label {
+  color: var(--color-grey-80);
+}
+.inputField.disabledUsername input:disabled {
+  border-bottom: 1px solid var(--color-grey-80);
+  color: var(--color-grey-80);
+  cursor: not-allowed;
+}
+.inputField.disabledPassword input:disabled {
+  border-bottom: 1px solid var(--color-grey-80);
+  cursor: not-allowed;
+}
+.inputField.disabledPassword .eyeIcon.disabledPassword {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+.inputField .inputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.inputField .inputContainer input {
+  width: 100%;
+  padding: var(--padding-vertical-small);
+  text-align: left;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--color-grey-80);
+  background-color: inherit;
+  color: var(--color-dark);
+  line-height: var(--line-height-medium);
+}
+.inputField .inputContainer input:focus {
+  border-bottom: 1px solid --color-dark;
+}
+.inputField .inputContainer input::-moz-placeholder {
+  color: var(--color-grey-100);
+}
+.inputField .inputContainer input::placeholder {
+  color: var(--color-grey-100);
+}
+.inputField .inputContainer input.error {
+  border-bottom: 1px solid var(--color-error);
+}
+.inputField .inputContainer .eyeIcon {
+  position: absolute;
+  right: 0;
+  transform: translateY(10%);
+  color: var(--color-dark);
+  cursor: pointer;
+}
+.inputField .errorMessage {
+  font-size: var(--font-size-xsmall);
+  color: var(--color-error);
+}/*# sourceMappingURL=InputField.module.css.map */
