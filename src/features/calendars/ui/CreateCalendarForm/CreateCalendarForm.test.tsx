@@ -59,7 +59,7 @@ describe("CreateCalendarForm", () => {
 
   it("should pass correct props to CalendarForm", () => {
     render(<CreateCalendarForm onClose={jest.fn()} />);
-    // Проверяем начальные значения
+
     expect(screen.getByTestId("title")).toHaveTextContent("");
     expect(screen.getByTestId("color")).toHaveTextContent("");
     expect(screen.getByTestId("used-colors")).toHaveTextContent(
@@ -70,9 +70,7 @@ describe("CreateCalendarForm", () => {
 
   it("should call createCalendar with form data when onSubmit is called", () => {
     render(<CreateCalendarForm onClose={jest.fn()} />);
-    // Кликаем по submit
     fireEvent.click(screen.getByTestId("submit-btn"));
-    // Проверяем, что вызван createCalendar с правильными аргументами
     expect(createCalendarMock).toHaveBeenCalledWith({
       title: "Test Title",
       color: "#abcdef",
