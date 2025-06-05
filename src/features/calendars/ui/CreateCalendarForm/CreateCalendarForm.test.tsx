@@ -1,9 +1,6 @@
-// src/features/calendars/ui/CreateCalendarForm.test.tsx
-
 import { render, screen, fireEvent } from "@testing-library/react";
 import CreateCalendarForm from "./CreateCalendarForm";
 
-// Мокаем все хуки и компонент CalendarForm
 jest.mock("features/calendars/ui/CalendarForm/CalendarForm", () => ({
   __esModule: true,
   default: (props: any) => (

@@ -63,7 +63,6 @@ describe("ColorPicker Component", () => {
 
       const [firstOption, secondOption] = await screen.findAllByRole("img");
 
-      // Сначала кликаем по первому и ждём его выделения
       await userEvent.click(firstOption);
       await waitFor(() => {
         expect(
@@ -74,7 +73,6 @@ describe("ColorPicker Component", () => {
         ).toBeInTheDocument();
       });
 
-      // Потом кликаем по второму и ждём переключения
       await userEvent.click(secondOption);
       await waitFor(() => {
         expect(

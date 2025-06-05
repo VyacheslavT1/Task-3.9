@@ -81,7 +81,7 @@ describe("ModalProvider and useModal", () => {
     await waitFor(() => expect(screen.queryByTestId("modal")).toBeNull());
   });
 
-  it("closes Modal when closeModal вызывается извне", async () => {
+  it("closes the Modal when closeModal is called externally", async () => {
     render(
       <ModalProvider>
         <TestConsumer />

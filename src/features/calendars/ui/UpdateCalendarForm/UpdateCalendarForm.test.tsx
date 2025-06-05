@@ -1,9 +1,6 @@
-// src/features/calendars/ui/UpdateCalendarForm.test.tsx
-
 import { render, screen, fireEvent } from "@testing-library/react";
 import UpdateCalendarForm from "./UpdateCalendarForm";
 
-// Мокаем CalendarForm, чтобы контролировать пропсы и имитировать onSubmit/onClose
 jest.mock("features/calendars/ui/CalendarForm/CalendarForm", () => ({
   __esModule: true,
   default: (props: any) => (
@@ -64,7 +61,7 @@ describe("UpdateCalendarForm", () => {
         onClose={jest.fn()}
       />
     );
-    // Проверяем начальные значения
+
     expect(screen.getByTestId("title")).toHaveTextContent("Work");
     expect(screen.getByTestId("color")).toHaveTextContent("#999999");
     expect(screen.getByTestId("used-colors")).toHaveTextContent(
@@ -82,9 +79,8 @@ describe("UpdateCalendarForm", () => {
         onClose={jest.fn()}
       />
     );
-    // Кликаем Submit
+
     fireEvent.click(screen.getByTestId("submit-btn"));
-    // Проверяем вызов
     expect(updateCalendarMock).toHaveBeenCalledWith("cal-1", {
       title: "Updated Title",
       color: "#fedcba",

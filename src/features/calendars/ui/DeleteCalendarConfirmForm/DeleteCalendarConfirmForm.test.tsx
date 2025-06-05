@@ -1,9 +1,6 @@
-// src/features/calendars/ui/DeleteCalendarConfirmForm.test.tsx
-
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import DeleteCalendarConfirmForm from "./DeleteCalendarConfirmForm";
 
-// Мокаем DeleteConfirmForm — для контроля props и имитации onConfirm/onCancel
 jest.mock("shared/ui/components", () => ({
   ...jest.requireActual("shared/ui/components"),
   DeleteConfirmForm: ({ isLoading, onCancel, onConfirm, children }: any) => (
@@ -22,7 +19,6 @@ jest.mock("shared/ui/components", () => ({
   ),
 }));
 
-// Мокаем useDeleteCalendar — возвращаем deleteCalendar и isLoading
 const deleteCalendarMock = jest.fn();
 jest.mock("features/calendars/api/hooks/useDeleteCalendar", () => ({
   useDeleteCalendar: () => ({
@@ -31,7 +27,6 @@ jest.mock("features/calendars/api/hooks/useDeleteCalendar", () => ({
   }),
 }));
 
-// Мокаем useModal — closeModal и showToast
 const closeModalMock = jest.fn();
 const showToastMock = jest.fn();
 jest.mock("shared/ui/context/ModalContext", () => ({
@@ -50,9 +45,8 @@ describe("DeleteCalendarConfirmForm", () => {
     render(
       <DeleteCalendarConfirmForm id="cal-1" title="Work" onClose={jest.fn()} />
     );
-    // Проверяем, что компонент есть
+
     expect(screen.getByTestId("delete-confirm-form")).toBeInTheDocument();
-    // Проверяем, что отображается правильный текст
     expect(screen.getByText(/are you sure/i)).toBeInTheDocument();
     expect(screen.getByText(/calendar/i)).toBeInTheDocument();
     expect(screen.getByText(/Work/)).toBeInTheDocument();
@@ -80,9 +74,8 @@ describe("DeleteCalendarConfirmForm", () => {
         onClose={jest.fn()}
       />
     );
-    // Жмём "Confirm"
+
     fireEvent.click(screen.getByTestId("confirm-btn"));
-    // Проверяем, что всё было вызвано с правильными аргументами
     await waitFor(() => {
       expect(deleteCalendarMock).toHaveBeenCalledWith("cal-2");
       expect(closeModalMock).toHaveBeenCalled();
@@ -99,7 +92,7 @@ describe("DeleteCalendarConfirmForm isLoading=true", () => {
         isLoading: true,
       }),
     }));
-    // Замокать остальные зависимости, если нужно (можно скопировать из начала файла)
+
     jest.doMock("shared/ui/components", () => ({
       ...jest.requireActual("shared/ui/components"),
       DeleteConfirmForm: ({ isLoading }: any) => (
@@ -120,7 +113,6 @@ describe("DeleteCalendarConfirmForm isLoading=true", () => {
   });
 
   it("should pass isLoading prop to DeleteConfirmForm", async () => {
-    // Динамический импорт компонента, чтобы использовались новые моки
     const { default: DeleteCalendarConfirmForm } = await import(
       "./DeleteCalendarConfirmForm"
     );

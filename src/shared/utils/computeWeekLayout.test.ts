@@ -54,7 +54,7 @@ describe("computeWeekLayout", () => {
     const startMin2 = 10 * MINUTES_IN_HOUR;
 
     const expectedTop1 = (startMin1 / MINUTES_IN_DAY) * TOTAL_HEIGHT;
-    const expectedHeight1 = (MINUTES_IN_HOUR / MINUTES_IN_DAY) * TOTAL_HEIGHT; // всегда 1 час
+    const expectedHeight1 = (MINUTES_IN_HOUR / MINUTES_IN_DAY) * TOTAL_HEIGHT;
     const expectedTop2 = (startMin2 / MINUTES_IN_DAY) * TOTAL_HEIGHT;
 
     expect(pos1.height).toBeCloseTo(expectedHeight1);
